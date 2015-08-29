@@ -15,4 +15,17 @@ class UserTest < ActiveSupport::TestCase
     user.raw_rate = 100.1
     assert user.invalid?
   end
+
+  test 'set rate' do
+    user = User.new(name: 'Alice')
+    user.rate = Rating.new(12.3)
+    user.save!
+    assert_equal 12.3, user.reload.rate.value
+  end
+
+  test 'set rate with validation' do
+    user = User.new(name: 'Alice')
+    user.rate = Rating.new(100.1)
+    assert user.invalid?
+  end
 end
