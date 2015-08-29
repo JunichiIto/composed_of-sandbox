@@ -2,8 +2,8 @@
 
 one:
   name: MyString
-  raw_rate: 1.5
+  rate_value: 1.5
 
 two:
   name: MyString
-  raw_rate: 1.5
+  rate_value: 1.5
